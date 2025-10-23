@@ -1,0 +1,21 @@
+services:
+  routeros:
+    image: evilfreelancer/docker-routeros:6.46.5
+    restart: unless-stopped
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    ports:
+      - 8999:8728
+      - 9000:8291
+      - 9001:80
+      - 1701:1701/udp
+      - 12701:12701
+      - 12702:12702
+      - 12703:12703
+      - 12704:12704
+      - 12705:12705
+      - 12706:12706
+      - 12101-12499:12101-12499
